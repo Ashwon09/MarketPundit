@@ -26,7 +26,7 @@
                             </a>
                         </div>
                         <div class="col-md-6">
-                            <a class="card" href="" style="width: 18rem;">
+                            <a class="card" href="{{route('photo.index')}}" style="width: 18rem;">
                                 <img class="card-img-top" src="..." alt="Card image cap">
                                 <div class="card-body">
                                     <p class="card-text">View Pictures</p>

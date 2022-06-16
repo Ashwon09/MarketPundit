@@ -2,27 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StatusRequest;
-use App\Models\status;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
-class StatusController extends Controller
+class PhotoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    function __construct(status $status)
+    function __construct(Photo $photo)
     {
-        $this->status = $status;
+        $this->photo = $photo;
     }
     public function index()
-    {
-        $statuses = $this->status::orderBy('created_at', 'desc')->get();
-        // dd($manufacturers);
-        return view('status.index', compact('statuses'));
+    { 
+        $photos = $this->photo::orderBy('created_at', 'desc')->get();
+        return view('photo.index', compact('photos'));
         //
     }
 
@@ -33,7 +30,6 @@ class StatusController extends Controller
      */
     public function create()
     {
-        return view('status.create');
         //
     }
 
@@ -43,11 +39,8 @@ class StatusController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StatusRequest $request)
+    public function store(Request $request)
     {
-        $this->status::create($request->createStatus());
-        return redirect()->route('status.index');
-
         //
     }
 
@@ -70,9 +63,6 @@ class StatusController extends Controller
      */
     public function edit($id)
     {
-        $status = $this->status::find($id);
-    //    dd($status);
-        return view('status.edit', compact('status'));
         //
     }
 
@@ -83,15 +73,8 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StatusRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $status = $this->status::find($id);
-        $status->status_heading = $request->status_heading;
-        $status->status_description = $request->status_description;
-        // dd($status);
-        $status->update();
-        return redirect()->route('status.index');
-    //    dd($status);
         //
     }
 
@@ -103,9 +86,6 @@ class StatusController extends Controller
      */
     public function destroy($id)
     {
-        $status=$this->status::find($id);
-        $status->delete();
-        return redirect()->route('status.index');   
         //
     }
 }
