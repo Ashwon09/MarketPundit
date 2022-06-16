@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\StatusController;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +17,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomepageController::class, 'index'])->name('index');
+
 
 Auth::routes();
 
