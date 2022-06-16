@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth'],'middleware' => 'admin'], function () {
 
     Route::group(['as' => 'status.', 'prefix' => 'status'], function () {
         Route::get('/index', [StatusController::class, 'index'])->name('index');
