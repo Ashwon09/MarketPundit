@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <a class="card" style="width: 18rem;" href="{{route('ViewPhoto')}}">
+            <a class="card" style="width: 18rem;" href="{{route('viewPhoto')}}">
                 <img class="card-img-top" src="{{asset('uploads/photos/'. $photo->photo_location)}}" alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text">{{$photo->photo_heading}}</p>

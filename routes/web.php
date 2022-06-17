@@ -23,7 +23,15 @@ Route::get('/news/{id}', [HomepageController::class, 'statusView'])->name('statu
 
 Route::get('/viewAll', [HomepageController::class, 'viewAll'])->name('viewAll');
 
-Route::get('/ViewPhoto', [HomepageController::class, 'ViewPhoto'])->name('ViewPhoto');
+Route::get('/ViewPhoto', [HomepageController::class, 'viewPhoto'])->name('viewPhoto');
+
+Route::get('/aboutUs', [HomepageController::class, 'aboutUs'])->name('aboutUs');
+Route::get('/boardOfDirectors', [HomepageController::class, 'boardOfDirectors'])->name('boardOfDirectors');
+
+Route::get('/services', [HomepageController::class, 'services'])->name('services');
+
+
+
 
 
 

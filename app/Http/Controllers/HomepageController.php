@@ -37,11 +37,26 @@ class HomepageController extends Controller
         return view('viewallstatus', compact('statuses'));
     }
 
-    public function ViewPhoto()
+    public function viewPhoto()
     {
         // dd('here');
         $photos = $this->photo::orderBy('created_at', 'desc')->get();
         //    dd($status);
         return view('viewphoto', compact('photos'));
+    }
+
+    public function aboutUs()
+    {
+        return view('aboutUs.aboutUs');
+    }
+
+    public function boardOfDirectors()
+    {
+        return view('aboutUs.boardOfDirectors');
+    }
+
+    public function services()
+    {
+        return view('services');
     }
 }
