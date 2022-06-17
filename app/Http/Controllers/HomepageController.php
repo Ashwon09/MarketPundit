@@ -12,10 +12,36 @@ class HomepageController extends Controller
     {
         $this->photo = $photo;
         $this->status = $status;
+    }
+    public function index()
+    {
+        $status = $this->status::orderBy('id', 'desc')->take(2)->get();
+        $photo = $this->photo::orderBy('id', 'desc')->first();
+        return view('welcome', compact('status', 'photo'));
+    }
 
+
+
+    public function statusView($id)
+    {
+        $status = $this->status::find($id);
+        //    dd($status);
+        return view('status', compact('status'));
     }
-    public function index(){
-        return view('welcome');
+
+    public function viewAll()
+    {
+        // dd('here');
+        $statuses = $this->status::orderBy('created_at', 'desc')->get();
+        //    dd($status);
+        return view('viewallstatus', compact('statuses'));
     }
-    //
+
+    public function ViewPhoto()
+    {
+        // dd('here');
+        $photos = $this->photo::orderBy('created_at', 'desc')->get();
+        //    dd($status);
+        return view('viewphoto', compact('photos'));
+    }
 }

@@ -19,6 +19,13 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [HomepageController::class, 'index'])->name('index');
 
+Route::get('/news/{id}', [HomepageController::class, 'statusView'])->name('statusView');
+
+Route::get('/viewAll', [HomepageController::class, 'viewAll'])->name('viewAll');
+
+Route::get('/ViewPhoto', [HomepageController::class, 'ViewPhoto'])->name('ViewPhoto');
+
+
 
 Auth::routes();
 
