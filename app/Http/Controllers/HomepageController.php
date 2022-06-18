@@ -59,4 +59,7 @@ class HomepageController extends Controller
     {
         return view('services');
     }
+     public function companyOverview(){
+        return view('companyOverview');
+     }
 }

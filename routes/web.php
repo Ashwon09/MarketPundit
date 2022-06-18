@@ -30,6 +30,9 @@ Route::get('/boardOfDirectors', [HomepageController::class, 'boardOfDirectors'])
 
 Route::get('/services', [HomepageController::class, 'services'])->name('services');
 
+Route::get('/companyOverview', [HomepageController::class, 'companyOverview'])->name('companyOverview');
+
+
 
 
 
