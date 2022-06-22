@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
    <h3>{{$status->status_heading}}</h3>
    <p class="justify">{{$status->status_description}}</p>
 </div>

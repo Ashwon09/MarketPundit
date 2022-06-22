@@ -1,8 +1,22 @@
 .responsive {
-    width: 35%;
+    width: 100%;
     height: auto;
-    padding-top: 0px;
-    margin-bottom: -10%;
-    margin-left: 5%;
-    border-radius:10%;
+    padding-right: 0px;
+    margin-top: -15%;
+    margin-bottom: -35%;
+    margin-left: 11%;
+  }
+
+  #responsive{
+    width: 10%;
+    height: auto;
+  }
+
+  #customnav{
+    background-color: cornflowerblue;
+  }
+
+  #toprow{
+    background: white; 
+    margin-left:0%;
   }

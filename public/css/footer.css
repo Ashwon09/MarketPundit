@@ -1,0 +1,16 @@
+#footerlogo{
+    padding-left: 0rem;
+    padding-right:0rem; 
+    overflow:hidden;
+    width: 50%;
+    height: auto;
+}
+
+.social{
+    font-size: 2rem;
+}
+
+#link{
+    text-decoration: none;
+    color: black;
+}

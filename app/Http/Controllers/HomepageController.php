@@ -15,7 +15,7 @@ class HomepageController extends Controller
     }
     public function index()
     {
-        $status = $this->status::orderBy('id', 'desc')->take(2)->get();
+        $status = $this->status::orderBy('id', 'desc')->take(3)->get();
         $photo = $this->photo::orderBy('id', 'desc')->first();
         return view('welcome', compact('status', 'photo'));
     }

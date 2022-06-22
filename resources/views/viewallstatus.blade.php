@@ -2,7 +2,7 @@
 
 @section('content')
 @foreach ($statuses as $status)
-<div class="container">
+<div class="container mt-5">
     <a class="card text-white bg-info mb-3" href="{{route('statusView',$status->id)}}">
 
         <div class="card-body">

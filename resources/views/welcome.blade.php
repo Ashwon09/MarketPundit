@@ -6,28 +6,30 @@
     <div class="text-block">
         <div class="center">
             <h2>Market Pundit Capital & Merchant Banking Limited</h2>
-            <h4>_____________________________________________</h4>
-            <h6>Journey Towards Prosperity</h6>
+            <p id="line">________________________________________________________________________________________</p>
+            <h6 id="text">Journey Towards Prosperity</h6>
             <a href="#" class="btn btn-light mt-2">Contact Us</a>
         </div>
     </div>
 </div>
 
 <div class="container-fluid mt-5" id="news">
-    <h3>News and Events</h3>
+    <h2 class="ms-2">News and Events</h2>
     <div class="container-fluid mt-3">
         <div class="row">
             <div class="col-6">
-                <a class="card" style="width: 18rem;" href="{{route('viewPhoto')}}">
-                    <img class="card-img" src="{{asset('uploads/photos/'. $photo->photo_location)}}" alt="Article Picture">
-                </a>
+                <div class="card w-100 h-100 border-0">
+                    <a style="width: 18rem;" href="{{route('viewPhoto')}}">
+                        <img class="card-img" src="{{asset('uploads/photos/'. $photo->photo_location)}}" alt="Article Picture" style="width: 250%; height: auto;">
+                    </a>
+                </div>
             </div>
             <div class="col-6">
 
                 @foreach ($status as $stat)
                 <div class="row">
-                    <a class="card text-white bg-info mb-3" href="{{route('statusView',$stat->id)}}">
-                        <div class="card-body">
+                    <a class="card text-black border-0 mb-2" id="article" href="{{route('statusView',$stat->id)}}">
+                        <div class="card-body mb-5">
                             <h4 class="card-title">{{$stat->status_heading}}</h4>
                             @php
                             $text = explode('.', $stat->status_description);
@@ -38,50 +40,19 @@
                     </a>
                 </div>
                 @endforeach
+                <div class="text-end">
+                    <a class="btn btn-primary" href="{{route('viewAll')}}">View All Status</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <div class="container-fluid mt-5">
-    <h3>Benefits Offered</h3>
+    <h2 class="ms-2">Benefits Offered</h2>
 </div>
-<div class="container-fluid" style="background: lightblue; padding-top:1vh; padding-bottom:1vh; padding-left:4vh; padding-right:4vh;">
-    <div class="row hidden-md-up mt-4">
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img" src="{{asset('image/test-img.jpg')}}" alt="Article Picture">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img" src="{{asset('image/test-img.jpg')}}" alt="Article Picture">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img" src="{{asset('image/test-img.jpg')}}" alt="Article Picture">
-            </div>
-        </div>
-    </div><br>
-
-    <div class="row mb-4">
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img" src="{{asset('image/test-img.jpg')}}" alt="Article Picture">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img" src="{{asset('image/test-img.jpg')}}" alt="Article Picture">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img" src="{{asset('image/test-img.jpg')}}" alt="Article Picture">
-            </div>
-        </div>
-    </div>
+<div class="container-fluid mt-3" id="benefits">
+    <img class="img-fluid" src="{{asset('image/benefits.png')}}">
 </div>
 
 

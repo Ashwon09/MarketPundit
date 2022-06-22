@@ -18,7 +18,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
 
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -34,6 +38,7 @@
 <body>
     @include('layouts.head')
     @yield('content')
+
     @include('layouts.footer')
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>

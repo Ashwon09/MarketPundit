@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
 
     <div class="card text-dark bg-info mb-4">
         <div class="card-body">
@@ -29,10 +29,10 @@
                     <p class="justify">Across the world, people are turning to specialists Portfolio Management Services
                         for managing their equity investments. Portfolio Management Services is the
                         investment division of Mar}et Pundit that helps investors access the equity
-                        mar}et in Nepal.</p>
+                        market in Nepal.</p>
                     <p>Our Portfolio Management Services has two product segments:</p>
                     <ul>
-                        <li>Discretionary Portfolio Management Service¥</li>
+                        <li>Discretionary Portfolio Management Service</li>
                         <li>Non-discretionary Portfolio Management Services</li>
                     </ul>
                     <h6>Discretionary Management</h6>
@@ -40,15 +40,15 @@
                         accordance with the risk that the client is willing to take. The portfolio managers
                         set the overall direction and goals for the account and tend to execute trades by
                         picking individual investments they believe will help meet the clients&lsquo; objectives
-                        as per the mar}et circumstance.</p>
-                    <p class="justify">This account wor}s best for investors who do not want to be actively involved in
+                        as per the market circumstance.</p>
+                    <p class="justify">This account works best for investors who do not want to be actively involved in
                         the day-to-day management of their investments and want to rely on a
                         professional portfolio manager to design their portfolio that meets their financial
                         objectives.</p>
                     <p>The products offered under our discretionary portfolio management services are
                         as follows:</p>
                     <h6>Non-Discretionary Management</h6>
-                    <p class="justify">Under non-discretionary management, the portfolio manager instead of ma}ing
+                    <p class="justify">Under non-discretionary management, the portfolio manager instead of making
                         their own decisions, manages the funds in accordance with the expressed
                         direction and suggestion of the client. With such account, the manager offers a
                         professional advice in connection with the client&lsquo;s transaction and execute
