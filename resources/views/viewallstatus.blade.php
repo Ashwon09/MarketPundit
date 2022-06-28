@@ -1,21 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-@foreach ($statuses as $status)
 <div class="container mt-5">
-    <a class="card text-white bg-info mb-3" href="{{route('statusView',$status->id)}}">
+    @foreach ($statuses as $status)
+
+
+    <a class="card mt-3" id="link" href="{{route('statusView',$status->id)}}">
 
         <div class="card-body">
-            <h4 class="card-title">{{$status->status_heading}}</h4>
+            <h4>{{$status->status_heading}}</h4>
             @php
             $text = explode('.', $status->status_description);
             $brief=$text[0];
             @endphp
-            <p class="card-text">{{$brief}}</p>
+            <p class="justify">{{$brief}}</p>
+
         </div>
+        <div class="card-footer text-muted">
+            Uploaded Date: {{$status->created_at}}
+        </div>
+
     </a>
+
+    @endforeach
 </div>
-@endforeach
 @endsection
-
-

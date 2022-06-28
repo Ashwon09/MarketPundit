@@ -30,7 +30,9 @@
                         in terms of infrastructures and services to handle the growing
                         business.</p>
                 </div>
-                <div class="col-5"></div>
+                <div class="col-5">
+                    <img class="overview ms-5 mt-5" src="{{asset('image/overview.png')}}">
+                </div>
             </div>
         </div>
     </div>
@@ -42,6 +44,11 @@
 <style>
     .justify {
         text-align: justify;
+    }
+
+    .overview{
+        width:90%;
+        height:auto;
     }
 </style>
 @endpush

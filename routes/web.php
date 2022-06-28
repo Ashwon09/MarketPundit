@@ -21,16 +21,16 @@ Route::get('/', [HomepageController::class, 'index'])->name('index');
 
 Route::get('/news/{id}', [HomepageController::class, 'statusView'])->name('statusView');
 
-Route::get('/viewAll', [HomepageController::class, 'viewAll'])->name('viewAll');
+Route::get('/view-all', [HomepageController::class, 'viewAll'])->name('viewAll');
 
-Route::get('/ViewPhoto', [HomepageController::class, 'viewPhoto'])->name('viewPhoto');
+Route::get('/view-photo', [HomepageController::class, 'viewPhoto'])->name('viewPhoto');
 
-Route::get('/aboutUs', [HomepageController::class, 'aboutUs'])->name('aboutUs');
-Route::get('/boardOfDirectors', [HomepageController::class, 'boardOfDirectors'])->name('boardOfDirectors');
+Route::get('/aboutus', [HomepageController::class, 'aboutUs'])->name('aboutUs');
+Route::get('/board-of-directors', [HomepageController::class, 'boardOfDirectors'])->name('boardOfDirectors');
 
 Route::get('/services', [HomepageController::class, 'services'])->name('services');
 
-Route::get('/companyOverview', [HomepageController::class, 'companyOverview'])->name('companyOverview');
+Route::get('/company-overview', [HomepageController::class, 'companyOverview'])->name('companyOverview');
 
 
 

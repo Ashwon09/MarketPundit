@@ -19,9 +19,11 @@
         <div class="row">
             <div class="col-6">
                 <div class="card w-100 h-100 border-0">
+                    @isset($photo)
                     <a style="width: 18rem;" href="{{route('viewPhoto')}}">
                         <img class="card-img" src="{{asset('uploads/photos/'. $photo->photo_location)}}" alt="Article Picture" style="width: 250%; height: auto;">
                     </a>
+                    @endisset
                 </div>
             </div>
             <div class="col-6">

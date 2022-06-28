@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-5">
-    <div class="card text-dark bg-light mb-4">
+    <div class="card bg-light text-dark mb-4">
         <div class="card-body">
             <h3 class="card-title fw-bold">Board of Directors</h3>
             <p class="justify">The board consists of 5 members ,including the Chairman. Our directors are the valuable asset to the organization as all of them are
@@ -13,11 +13,13 @@
                 provide ways to implement to achieve goals and also to provide guidance and suggestions for the sustainability of the organization.</p>
         </div>
     </div>
-    <div class="card text-dark bg-info mb-4">
+    <div class="card bg-light text-dark mb-4">
         <div class="card-body">
             <div class="row m-1">
-                <div class="col-3"></div>
-                <div class="col-9">
+                <div class="col-3">
+                    <img src="{{asset('image/deepak.jpg')}}">
+                </div>
+                <div class="col-9 mt-2">
                     <h3 class="card-title fw-bold">Deepak Muni Bajracharya</h3>
                     <h4 class="card-title fw-bold">Chairman</h4>
                     <p class="justify">Mr. Bajracharya is an MBA graduate from Tribhuvan University. He has more than 25 years of working
@@ -30,10 +32,10 @@
             </div>
         </div>
     </div>
-    <div class="card text-dark bg-info mb-4">
+    <div class="card bg-light text-dark mb-4">
         <div class="card-body">
             <div class="row m-1">
-                <div class="col-9">
+                <div class="col-9 mt-2">
                     <h3 class="card-title fw-bold">Mr. Umesh Nakarmi</h3>
                     <h4 class="card-title fw-bold">Director</h4>
                     <p class="justify">Mr. Nakarmi has been involved in the industry of the investment profession for over 25 years and also
@@ -44,16 +46,20 @@
                         Ltd., Nepal International Collection P. Ltd. and Him Sikhar Rugs and Crafts. He is a graduate from the
                         Amrit Science College, Kathmandu.</p>
                 </div>
-                <div class="col-3"></div>
+                <div class="col-3">
+                    <img class="ms-4" src="{{asset('image/umesh.jpg')}}">
+                </div>
 
             </div>
         </div>
     </div>
-    <div class="card text-dark bg-info mb-4">
+    <div class="card bg-light text-dark mb-4">
         <div class="card-body">
             <div class="row m-1">
-                <div class="col-3"></div>
-                <div class="col-9">
+                <div class="col-3">
+                    <img src="{{asset('image/binod.jpg')}}">
+                </div>
+                <div class="col-9 mt-2">
                     <h3 class="card-title fw-bold">Mr. Binod Purush</h3>
                     <h4 class="card-title fw-bold">Executive Director</h4>
                     <p class="justify">Mr. Binod Purush resides in the position of Executive Director in the organization. With 15 plus years
@@ -66,30 +72,10 @@
             </div>
         </div>
     </div>
-    <div class="card text-dark bg-info mb-4">
+    <div class="card bg-light text-dark mb-4">
         <div class="card-body">
             <div class="row m-1">
-                <div class="col-9">
-                    <h3 class="card-title fw-bold">Mr. Bishnu Prasad Basyal</h3>
-                    <h4 class="card-title fw-bold">Director</h4>
-                    <p class="justify">Mr. Basyal holds the prestigious designation of the Charter Financial Analyst (CFA) from ICFAI
-                        University, India and also holds B.A. (ECONOMICS) Punjab University, Chandigarh(U.T.),India. He has
-                        been serving as a Director in Market Pundit. He was involved in Master Capital Services Ltd. India as
-                        Manager( Research and Advisory Department), and as Sr. Manager ( Research and Advisory
-                        Department), in Berkeley Securities Pvt. Ltd. He was awarded First Position & Best Group
-                        performer on Business Strategy and Performance Analysis conducted by Cygnus Business
-                        Consulting and Research Pvt. Ltd., Hyderabad, India.</p>
-                </div>
-                <div class="col-3"></div>
-
-            </div>
-        </div>
-    </div>
-    <div class="card text-dark bg-info mb-4">
-        <div class="card-body">
-            <div class="row m-1">
-                <div class="col-3"></div>
-                <div class="col-9">
+                <div class="col-9 mt-2">
                     <h3 class="card-title fw-bold">Mr. Sanjaya Dhakal</h3>
                     <h4 class="card-title fw-bold">Executive Director</h4>
                     <p class="justify">Mr. Dhakal is currently engaged as a Director in Market Pundit. He is actively involved in the Nepal
@@ -100,6 +86,10 @@
                         Proficiency Certificate Level Business Administration from Shankar Dev Campus, Kathmandu.
                         Besides, he also resides in the position of Director in Unique Team Investment Pvt. Ltd.</p>
                 </div>
+                <div class="col-3">
+                    <img class="ms-4" src="{{asset('image/sanjaya.jpg')}}">
+                </div>
+
             </div>
         </div>
     </div>

@@ -27,12 +27,8 @@
                     Stakeholder Info
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><a class="dropdown-item" href="#">Annual Report</a></li>
+                    <li><a class="dropdown-item" href="#">Presentation</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown ms-5 me-5">
@@ -43,10 +39,6 @@
                     <li><a class="dropdown-item" href="{{route('aboutUs')}}">About Us</a></li>
                     <li><a class="dropdown-item" href="{{route('companyOverview')}}">Company overview</a></li>
                     <li><a class="dropdown-item" href="{{route('boardOfDirectors')}}">Board of Directors</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown ms-5 me-5">
