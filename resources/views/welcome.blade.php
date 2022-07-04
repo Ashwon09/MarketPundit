@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid" id="StockImg">
-    <img class="img-fluid" src="{{asset('image/stock.jpg')}}">
+<div class="container-fluid" id="StockImg" >
+    <img class="img-fluid" src="{{asset('image/stock.jpg')}}" width="100%">
     <div class="text-block">
         <div class="center">
             <h2>Market Pundit Capital & Merchant Banking Limited</h2>
@@ -54,7 +54,7 @@
     <h2 class="ms-2">Benefits Offered</h2>
 </div>
 <div class="container-fluid mt-3" id="benefits">
-    <img class="img-fluid" src="{{asset('image/benefits.png')}}">
+    <img class="img-fluid" src="{{asset('image/benefits.png')}}" width="100%">
 </div>
 
 

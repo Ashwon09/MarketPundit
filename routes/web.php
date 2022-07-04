@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BODController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\StatusController;
@@ -43,7 +44,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::group(['middleware' => ['auth'],'middleware' => 'admin'], function () {
+Route::group(['middleware' => ['auth'], 'middleware' => 'admin'], function () {
 
     Route::group(['as' => 'status.', 'prefix' => 'status'], function () {
         Route::get('/index', [StatusController::class, 'index'])->name('index');
@@ -63,6 +64,12 @@ Route::group(['middleware' => ['auth'],'middleware' => 'admin'], function () {
         Route::get('/delete/{id}', [PhotoController::class, 'destroy'])->name('delete');
     });
 
-    
-
+    Route::group(['as' => 'bod.', 'prefix' => 'bod'], function () {
+        Route::get('/index', [BODController::class, 'index'])->name('index');
+        Route::get('/create', [BODController::class, 'create'])->name('create');
+        Route::post('/store', [BODController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [BODController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [BODController::class, 'update'])->name('update');
+        Route::get('/delete/{id}', [BODController::class, 'destroy'])->name('delete');
+    });
 });

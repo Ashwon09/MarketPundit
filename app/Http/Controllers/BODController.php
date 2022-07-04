@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BODRequest;
+use App\Models\BOD;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BODController extends Controller
 {
@@ -11,8 +14,15 @@ class BODController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct(BOD $bod)
+    {
+        $this->bod = $bod;
+    }
     public function index()
     {
+        $bods = $this->bod::orderBy('created_at', 'desc')->get();
+        // dd($manufacturers);
+        return view('bod.index', compact('bods'));
         //
     }
 
@@ -23,6 +33,7 @@ class BODController extends Controller
      */
     public function create()
     {
+        return view('bod.create');
         //
     }
 
@@ -32,8 +43,17 @@ class BODController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BODRequest $request)
     {
+        // dd($request->all());
+        if (!is_dir('uploads'))
+            mkdir('uploads');
+
+        if (!is_dir('uploads/bod'))
+            mkdir('uploads/bod');
+
+        $this->bod::create($request->createbod());
+        return redirect()->route('bod.index');
         //
     }
 
@@ -56,6 +76,8 @@ class BODController extends Controller
      */
     public function edit($id)
     {
+        $bod=$this->bod::find($id);
+        return view('bod.edit', compact('bod'));
         //
     }
 
@@ -79,6 +101,18 @@ class BODController extends Controller
      */
     public function destroy($id)
     {
+        $bod = $this->bod::find($id);
+        // dd($bod);
+        // dd($photo);
+        // dd($photo->photo_location);
+        $destination = public_path('uploads/bod/' . $bod->picture);
+        // dd($destination);
+        if (File::exists($destination)) {
+            File::delete($destination);
+        }
+        $bod->delete();
+        return redirect()->route('photo.index');
+
         //
     }
 }

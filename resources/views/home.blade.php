@@ -17,14 +17,19 @@
                         <h5>{{ __('You are logged in!') }}</h5>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-6">
-                            <a class="btn btn-success" href="{{route('status.index')}}" >
+                        <div class="col-md-6 mt-3">
+                            <a class="btn btn-success" href="{{route('status.index')}}">
                                 View Status
                             </a>
                         </div>
-                        <div class="col-md-6">
-                            <a class="btn btn-success" href="{{route('photo.index')}}" >
+                        <div class="col-md-6 mt-3">
+                            <a class="btn btn-success" href="{{route('photo.index')}}">
                                 View Pictures
+                            </a>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <a class="btn btn-success" href="{{route('bod.index')}}">
+                                View Board of Directors
                             </a>
                         </div>
                     </div>
