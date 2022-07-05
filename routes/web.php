@@ -3,6 +3,7 @@
 use App\Http\Controllers\BODController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StatusController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -71,5 +72,14 @@ Route::group(['middleware' => ['auth'], 'middleware' => 'admin'], function () {
         Route::get('/edit/{id}', [BODController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [BODController::class, 'update'])->name('update');
         Route::get('/delete/{id}', [BODController::class, 'destroy'])->name('delete');
+    });
+
+    Route::group(['as' => 'service.', 'prefix' => 'service'], function () {
+        Route::get('/index', [ServiceController::class, 'index'])->name('index');
+        Route::get('/create', [ServiceController::class, 'create'])->name('create');
+        Route::post('/store', [ServiceController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [ServiceController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [ServiceController::class, 'update'])->name('update');
+        Route::get('/delete/{id}', [ServiceController::class, 'destroy'])->name('delete');
     });
 });

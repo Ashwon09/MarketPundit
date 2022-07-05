@@ -2,26 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StatusRequest;
-use App\Models\status;
+use App\Http\Requests\ServiceRequest;
+use App\Models\Services;
 use Illuminate\Http\Request;
 
-class StatusController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    function __construct(status $status)
+    function __construct(Services $service)
     {
-        $this->status = $status;
+        $this->service = $service;
     }
     public function index()
     {
-        $statuses = $this->status::orderBy('created_at', 'desc')->get();
-        return view('status.index', compact('statuses'));
+        $services = $this->service::orderBy('created_at', 'desc')->get();
+        return view('service.index', compact('services'));
         //
     }
 
@@ -32,7 +31,7 @@ class StatusController extends Controller
      */
     public function create()
     {
-        return view('status.create');
+        return view('service.create');
         //
     }
 
@@ -42,11 +41,10 @@ class StatusController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StatusRequest $request)
+    public function store(ServiceRequest $request)
     {
-        $this->status::create($request->createStatus());
-        return redirect()->route('status.index');
-
+        $this->service::create($request->createService());
+        return redirect()->route('service.index');
         //
     }
 
@@ -69,9 +67,8 @@ class StatusController extends Controller
      */
     public function edit($id)
     {
-        $status = $this->status::find($id);
-    //    dd($status);
-        return view('status.edit', compact('status'));
+        $service = $this->service::find($id);
+        return view('service.edit', compact('service'));
         //
     }
 
@@ -82,16 +79,15 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StatusRequest $request, $id)
+    public function update(ServiceRequest $request, $id)
     {
-        $status = $this->status::find($id);
-        $status->status_heading = $request->status_heading;
-        $status->status_description = $request->status_description;
-        // dd($status);
-        $status->update();
-        return redirect()->route('status.index');
-    //    dd($status);
         //
+        $service = $this->service::find($id);
+        $service->service_heading = $request->service_heading;
+        $service->service_description = $request->service_description;
+        // dd($status);
+        $service->update();
+        return redirect()->route('service.index');
     }
 
     /**
@@ -102,9 +98,9 @@ class StatusController extends Controller
      */
     public function destroy($id)
     {
-        $status=$this->status::find($id);
-        $status->delete();
-        return redirect()->route('status.index');   
+        $service=$this->service::find($id);
+        $service->delete();
+        return redirect()->route('service.index');   
         //
     }
 }

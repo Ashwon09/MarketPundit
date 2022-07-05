@@ -89,6 +89,7 @@ class PhotoController extends Controller
      */
     public function update(PhotoEditRequest $request, $id)
     {
+        // dd($request->all());
         $photo = $this->photo::find($id);
         // dd($photo);
         $photo->photo_heading = $request->photo_heading;

@@ -7,7 +7,7 @@
         <div class="col-10">
             <div class="card border-secondary mt-4">
                 <div class="card-header text-center text-white bg-dark ">
-                    <h2>Post a Picture</h2>
+                    <h2>Edit Picture</h2>
                 </div>
                 <div class="p-3">
                     <form action="{{route('photo.update', $photo->id)}}" method="post" enctype="multipart/form-data">

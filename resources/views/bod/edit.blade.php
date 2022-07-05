@@ -10,7 +10,7 @@
                     <h2>Edit BOD's Information</h2>
                 </div>
                 <div class="p-3">
-                    <form action="{{route('bod.update', $bod->id)}}" method="post">
+                    <form action="{{route('bod.update', $bod->id)}}" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_method" value="PUT">
                         @csrf
                         <div class="form-group">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BodEditRequest;
 use App\Http\Requests\BODRequest;
 use App\Models\BOD;
 use Illuminate\Http\Request;
@@ -88,9 +89,29 @@ class BODController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BodEditRequest $request, $id)
     {
-        //
+        // dd($request->all());
+        $bod = $this->bod::find($id);
+        // dd($photo);
+        $bod->name = $request->name;
+        $bod->role = $request->position;
+        $bod->description = $request->description;
+
+        if ($request->picture != null) {
+            $destination = public_path('uploads/bod/' . $bod->picture);
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('picture');
+            $newImageName = time() . '_' . $file->getClientOriginalName();
+            $dest = public_path('/uploads/bod');
+            $request->file('picture')->move($dest, $newImageName);
+            $bod->picture = $newImageName;
+        }
+        $bod->picture = $bod->picture;
+        $bod->update();
+        return redirect()->route('bod.index');
     }
 
     /**
