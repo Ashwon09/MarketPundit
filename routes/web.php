@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BODController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ServiceController;
@@ -44,8 +45,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::post('/contact', [ContactController::class, 'store'])->name('ContactStore');
+
 
 Route::group(['middleware' => ['auth'], 'middleware' => 'admin'], function () {
+
+
+    Route::group(['as' => 'contact.', 'prefix' => 'contact'], function () {
+        Route::get('/index', [ContactController::class, 'index'])->name('index');
+        Route::get('/delete/{id}', [ContactController::class, 'destroy'])->name('delete');
+    });
 
     Route::group(['as' => 'status.', 'prefix' => 'status'], function () {
         Route::get('/index', [StatusController::class, 'index'])->name('index');

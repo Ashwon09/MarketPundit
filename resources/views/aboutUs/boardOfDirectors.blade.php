@@ -93,6 +93,49 @@
             </div>
         </div>
     </div>
+    @php
+    $var = 0;
+    @endphp
+    @foreach ($bods as $bod)
+    @if($var%2==0)
+    @php
+    $var++;
+    @endphp
+    <div class="card bg-light text-dark mb-4">
+        <div class="card-body">
+            <div class="row m-1">
+                <div class="col-3">
+                    <img src="{{asset('uploads/bod/'. $bod->picture)}}">
+                </div>
+                <div class="col-9 mt-2">
+                    <h3 class="card-title fw-bold">{{$bod->name}}</h3>
+                    <h4 class="card-title fw-bold">{{$bod->role}}</h4>
+                    <p class="justify">{{$bod->description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @else
+    @php
+    $var++;
+    @endphp
+    <div class="card bg-light text-dark mb-4">
+        <div class="card-body">
+            <div class="row m-1">
+
+                <div class="col-9 mt-2">
+                    <h3 class="card-title fw-bold">{{$bod->name}}</h3>
+                    <h4 class="card-title fw-bold">{{$bod->role}}</h4>
+                    <p class="justify">{{$bod->description}}</p>
+                </div>
+                <div class="col-3">
+                    <img src="{{asset('uploads/bod/'. $bod->picture)}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+    @endforeach
 </div>
 
 @endsection

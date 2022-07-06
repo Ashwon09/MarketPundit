@@ -68,29 +68,29 @@
             <div class="row m-1">
                 <div class="col-7">
                     <h3 class="card-title fw-bold">IPO and FPO Management</h3>
-                    <p class="justify">An initial public offering (IPO) or stock launch is a public offering in which shares of a 
-                        company are sold to institutional investors[1] and usually also to retail (individual) investors.[2] An IPO 
-                        is typically underwritten by one or more investment banks, who also arrange for the shares to be listed on 
-                        one or more stock exchanges. Through this process, colloquially known as floating, or going public, a 
-                        privately held company is transformed into a public company. Initial public offerings can be used to raise 
-                        new equity capital for companies, to monetize the investments of private shareholders such as company 
-                        founders or private equity investors, and to enable easy trading of existing holdings or future capital 
+                    <p class="justify">An initial public offering (IPO) or stock launch is a public offering in which shares of a
+                        company are sold to institutional investors[1] and usually also to retail (individual) investors.[2] An IPO
+                        is typically underwritten by one or more investment banks, who also arrange for the shares to be listed on
+                        one or more stock exchanges. Through this process, colloquially known as floating, or going public, a
+                        privately held company is transformed into a public company. Initial public offerings can be used to raise
+                        new equity capital for companies, to monetize the investments of private shareholders such as company
+                        founders or private equity investors, and to enable easy trading of existing holdings or future capital
                         raising by becoming publicly traded.
                     </p>
                     <p class="justify">
-                        After the IPO, shares are traded freely in the open market at what is known as the free float. Stock 
-                        exchanges stipulate a minimum free float both in absolute terms (the total value as determined by the 
-                        share price multiplied by the number of shares sold to the public) and as a proportion of the total share 
-                        capital (i.e., the number of shares sold to the public divided by the total shares outstanding). Although 
-                        IPO offers many benefits, there are also significant costs involved, chiefly those associated with the 
-                        process such as banking and legal fees, and the ongoing requirement to disclose important and sometimes 
+                        After the IPO, shares are traded freely in the open market at what is known as the free float. Stock
+                        exchanges stipulate a minimum free float both in absolute terms (the total value as determined by the
+                        share price multiplied by the number of shares sold to the public) and as a proportion of the total share
+                        capital (i.e., the number of shares sold to the public divided by the total shares outstanding). Although
+                        IPO offers many benefits, there are also significant costs involved, chiefly those associated with the
+                        process such as banking and legal fees, and the ongoing requirement to disclose important and sometimes
                         sensitive information.
                     </p>
                     <p class="justify">
-                        FPO (Follow on Public Offer) is a process by which a company, which is already listed on an exchange, 
-                        issues new shares to the investors or the existing shareholders, usually the promoters. FPO is used by 
-                        companies to diversify their equity base. A company uses FPO after it has gone through the process of 
-                        an IPO and decides to make more of its shares available to the public or to raise capital to expand or 
+                        FPO (Follow on Public Offer) is a process by which a company, which is already listed on an exchange,
+                        issues new shares to the investors or the existing shareholders, usually the promoters. FPO is used by
+                        companies to diversify their equity base. A company uses FPO after it has gone through the process of
+                        an IPO and decides to make more of its shares available to the public or to raise capital to expand or
                         pay off debt.
                     </p>
                 </div>
@@ -117,6 +117,19 @@
         </div>
     </div>
 
+    @foreach($services as $service)
+    <div class="card bg-light text-dark mb-4">
+        <div class="card-body">
+            <div class="row m-1">
+                <div class="col-7">
+                    <h3 class="card-title fw-bold">{{$service->service_heading}}</h3>
+                    <p class="justify">{{$service->service_description}}</p>
+                </div>
+                <div class="col-5"></div>
+            </div>
+        </div>
+    </div>
+    @endforeach
 </div>
 
 @endsection
@@ -127,10 +140,9 @@
         text-align: justify;
     }
 
-    .portfolio-management-service{
+    .portfolio-management-service {
         width: 90%;
         height: auto;
     }
-
 </style>
 @endpush

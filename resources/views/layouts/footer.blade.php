@@ -1,5 +1,45 @@
 <div>
+<div class="row m-5">
+<div class="col-7">
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-body">
+                <h3 class="card-title"> For any queries, fill the form below </h3>
+                <form action="{{route('ContactStore')}}" method="post">
+                @csrf
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+                        <span style="color:red"> @error ('name'){{$message}}@enderror</span>
+                    </div>
 
+                    <div class="form-group mt-3">
+                        <label for="number">Phone Number</label>
+                        <input type="number" class="form-control" id="number" name="number" placeholder="Enter Your Number">
+                        <span style="color:red"> @error ('number'){{$message}}@enderror</span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+                        <span style="color:red"> @error ('email'){{$message}}@enderror</span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                        <span style="color:red"> @error ('message'){{$message}}@enderror</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-5">
+</div>
+</div>
     <div class="row m-5">
 
         <div class="col-7">

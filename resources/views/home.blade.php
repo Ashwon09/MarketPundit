@@ -37,6 +37,11 @@
                                 View Services
                             </a>
                         </div>
+                        <div class="col-md-6 mt-3">
+                            <a class="btn btn-success" href="{{route('contact.index')}}">
+                                View Contacts
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

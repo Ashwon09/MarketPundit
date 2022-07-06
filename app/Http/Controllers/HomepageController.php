@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BOD;
 use Illuminate\Http\Request;
 use App\Models\Photo;
+use App\Models\Services;
 use App\Models\status;
 class HomepageController extends Controller
 {
-     function __construct(Photo $photo, Status $status)
+     function __construct(Photo $photo, Status $status, BOD $bod, Services $service)
     {
         $this->photo = $photo;
         $this->status = $status;
+        $this->bod = $bod;
+        $this->service = $service;
+
+
     }
     public function index()
     {
@@ -51,12 +57,14 @@ class HomepageController extends Controller
 
     public function boardOfDirectors()
     {
-        return view('aboutUs.boardOfDirectors');
+        $bods = $this->bod::orderBy('created_at', 'asc')->get();
+        return view('aboutUs.boardOfDirectors', compact('bods'));
     }
 
     public function services()
     {
-        return view('services');
+        $services = $this->service::orderBy('created_at', 'asc')->get();
+        return view('services',compact('services'));
     }
      public function companyOverview(){
         return view('companyOverview');
