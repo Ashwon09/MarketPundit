@@ -7,24 +7,30 @@ use Illuminate\Http\Request;
 use App\Models\Photo;
 use App\Models\Services;
 use App\Models\status;
+use Illuminate\Support\Facades\Http;
+
 class HomepageController extends Controller
 {
-     function __construct(Photo $photo, Status $status, BOD $bod, Services $service)
+    function __construct(Photo $photo, Status $status, BOD $bod, Services $service)
     {
         $this->photo = $photo;
         $this->status = $status;
         $this->bod = $bod;
         $this->service = $service;
-
-
     }
     public function index()
     {
+        $client = new \GuzzleHttp\Client();
+        $request = Http::get("http://nepstockapi.herokuapp.com/");
+        // dd($request);
+        $response = $request->getBody()->getContents();
+        // error_log($response);
+        $data= json_decode($response);
+        // dd($data);
         $status = $this->status::orderBy('id', 'desc')->take(3)->get();
         $photo = $this->photo::orderBy('id', 'desc')->first();
-        return view('welcome', compact('status', 'photo'));
+        return view('welcome', compact('status', 'photo', 'data'));
     }
-
 
 
     public function statusView($id)
@@ -64,10 +70,11 @@ class HomepageController extends Controller
     public function services()
     {
         $services = $this->service::orderBy('created_at', 'asc')->get();
-        return view('services',compact('services'));
+        return view('services', compact('services'));
     }
-     public function companyOverview(){
+    public function companyOverview()
+    {
         return view('companyOverview');
-     }
+    }
     //
 }

@@ -12,6 +12,29 @@
         </div>
     </div>
 </div>
+<div class="row m-2 border border-dark bg-light"> 
+<marquee scrollamount="8"  scrolldelay="10">
+@foreach ($data as $res)
+{{$res->Symbol}}
+{{$res->Close }}
+({{$res->Vol }})
+@if($res->Diff>0)
+<span class="text-success me-4">
+({{$res->Diff }}) 
+</span>
+@elseif($res->Diff==0)
+<span class="me-4">
+({{$res->Diff }})
+</span>
+@else
+<span class="text-danger me-4">
+({{$res->Diff}})
+</span>
+@endif
+
+@endforeach
+</marquee>
+</div>
 
 <div class="container-fluid mt-5" id="news">
     <h2 class="ms-2">News and Events</h2>
