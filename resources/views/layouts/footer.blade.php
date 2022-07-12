@@ -47,16 +47,16 @@
             <div class="ms-5">
                 <h6>Quick Links</h6>
                 <div>
-                    <a id="link" href="">Mero Share Login</a>
+                    <a id="link" href="https://meroshare.cdsc.com.np/#/login">Mero Share Login</a>
                 </div>
                 <div>
-                    <a id="link" href="">Nepal Rastra Bank</a>
+                    <a id="link" href="https://www.nrb.org.np/">Nepal Rastra Bank</a>
                 </div>
                 <div>
-                    <a id="link" href="">Nepal Stock Exchange</a>
+                    <a id="link" href="http://www.nepalstock.com/">Nepal Stock Exchange</a>
                 </div>
                 <div>
-                    <a id="link" href="">Securities Board of Nepal</a>
+                    <a id="link" href="http://sebon.gov.np/index.php">Securities Board of Nepal</a>
                 </div>
             </div>
         </div>

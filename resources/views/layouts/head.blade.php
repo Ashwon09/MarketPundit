@@ -46,9 +46,9 @@
                     Login
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">PMS Loginb</a></li>
-                    <li><a class="dropdown-item" href="#">Staff Login</a></li>
-                    <li><a class="dropdown-item" href="#">Mero Share</a></li>
+                    <li><a class="dropdown-item" href="http://202.51.74.171/Global/Account/Login">PMS Login</a></li>
+                    <li><a class="dropdown-item" href="https://accounting.ezonecloud.com/Login.aspx">Staff Login</a></li>
+                    <li><a class="dropdown-item" href="https://meroshare.cdsc.com.np/#/login">Mero Share</a></li>
                 </ul>
             </li>
             @if(Auth::check())

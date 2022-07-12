@@ -33,13 +33,10 @@
                             <td> {{$contact->email}}</td>
                             <td> {{$contact->number}}</td>
                             <td class="justify"> {{$contact->message}}</td>
-                           
-                            
                             <td>
                                 <a type="button" class="btn btn-danger mt-1" href="{{route('contact.delete',$contact->id)}}">Delete</a>
                             </td>
                         </tr>
-
                         @endforeach
                     </tbody>
                 </table>

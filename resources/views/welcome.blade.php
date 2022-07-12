@@ -20,15 +20,15 @@
 ({{$res->Vol }})
 @if($res->Diff>0)
 <span class="text-success me-4">
-({{$res->Diff }}) 
+({{$res->Diff }}) <i class="fa-solid fa-angles-up"></i>
 </span>
 @elseif($res->Diff==0)
 <span class="me-4">
-({{$res->Diff }})
+({{$res->Diff }}) <i class="fa-solid fa-equals"></i>
 </span>
 @else
 <span class="text-danger me-4">
-({{$res->Diff}})
+({{$res->Diff}}) <i class="fa-solid fa-angles-down"></i>
 </span>
 @endif
 
