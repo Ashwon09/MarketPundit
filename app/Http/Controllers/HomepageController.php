@@ -76,5 +76,10 @@ class HomepageController extends Controller
     {
         return view('companyOverview');
     }
+
+    public function contactUs()
+    {
+        return view('contactUs');
+    }
     //
 }

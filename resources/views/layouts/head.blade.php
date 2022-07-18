@@ -14,6 +14,9 @@
             <li class="nav-item ms-5 me-5">
                 <a class="nav-link ms-5 me-5" href="#">Career</a>
             </li>
+            <li class="nav-item ms-5 me-5">
+                <a class="nav-link ms-5 me-5" href="{{route('contactUs')}}">Contact Us</a>
+            </li>
         </ul>
         <ul class="navbar-nav flex-row ms-5 mt-1 fw-bold">
             <li class="nav-item me-5" style="margin-left:16rem;">

@@ -37,6 +37,8 @@ Route::get('/services', [HomepageController::class, 'services'])->name('services
 
 Route::get('/company-overview', [HomepageController::class, 'companyOverview'])->name('companyOverview');
 
+Route::get('/contact-us', [HomepageController::class, 'contactUs'])->name('contactUs');
+
 
 
 

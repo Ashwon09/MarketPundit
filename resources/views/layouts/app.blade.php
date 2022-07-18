@@ -37,7 +37,9 @@
 
 <body>
     @include('layouts.head')
+    <div class="margin-custom">
     @yield('content')
+    </div>
 
     @include('layouts.footer')
     <!-- bootstrap -->
